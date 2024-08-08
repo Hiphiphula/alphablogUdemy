@@ -19,13 +19,14 @@ class ArticlesController < ApplicationController
     # render plain: params[:article]
     @article = Article.new(article_params)
     # render plain: @article.inspect
+    # render :new unless @article.save
     if @article.save
       flash[:notice] = "Article was created successfuly."
       redirect_to @article
+      # redirect_to article_path(@article) #the same
     else
       render "new", status: :unprocessable_entity
     end
-    # redirect_to article_path(@article) #the same <as></as>
   end
 
 
