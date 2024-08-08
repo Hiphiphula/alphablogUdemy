@@ -14,7 +14,11 @@
         <tbody>
             <% @articles.each do |article |%>
                 <tr>
-                    <td> <%= link_to article.title, article_path(article), class:"text-decoration-none text-success text-uppercase" %></td>
+                    <td> 
+                        <%= link_to article.title, article_path(article), class:"text-decoration-none text-success text-uppercase" %> 
+                        </br>
+                        by <%= article.user.username%>
+                    </td>
                     <td> <%= truncate(article.description, length: 100)%></td>
                     <td> <%= link_to "Show", article_path(article) %> </td>
                     <td> <%= link_to "Edit", edit_article_path(article) %></td>
@@ -34,7 +38,7 @@
     </table>
 
     <p>
-        <%= link_to "Create New Article", new_article_path %>
+        
     </p>
 </div>
 
