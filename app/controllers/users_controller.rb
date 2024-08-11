@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     set_user
     if @user.update(user_params)
       flash[:notice] = "You have successfuly updated your information"
-      redirect_to home_path
+      redirect_to @user # or user_path(@user)
     else
       render "edit", status: :unprocessable_entity
     end
