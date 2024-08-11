@@ -1,7 +1,15 @@
 <div class="container">
     <h1 class="text-center">Articles listing page</h1>
 
+    <div class="flickr_pagination mb-4">
+        <div class="page_info">
+            <%= page_entries_info @articles %>
+        </div>
+            <%= will_paginate @articles, :container => false %>
+    </div>
     <%= render 'article' %>
+
+    <%= will_paginate @articles, class:"flickr_pagination mb-4" %>
 
 </div>
 
