@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 class="mt-4">Log in for Alpha Blog </h1>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <%= form_with(scope: :session, url: login_path, local: true) do |f|%>
+                <div class="field form-group">
+                    <%= f.label :email%> </br>
+                    <%= f.email_field :email, class:"form-control", placeholder: "Enter your email" %>
+                    </div>
+                    </br>
+                <div>
+
+                <div class="field form-group">
+                    <%= f.label :password%> </br>
+                    <%= f.password_field :password, class:"form-control", placeholder: "Enter your password" %>
+                    </div>
+                    </br>
+                <div>
+                    <%= f.submit "log in",  class:"btn btn-secondary"%>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</div>
+
