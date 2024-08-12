@@ -8,7 +8,6 @@ class UsersController < ApplicationController
 
   # GET /users/1 or /users/1.json
   def show
-    set_user
     @articles = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
@@ -19,13 +18,13 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    set_user
   end
 
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       flash[:notice] = "Hello #{@user.username}, welcome to the Alpha Blog, you have successfuly signed up"
       redirect_to home_path
     else
@@ -35,7 +34,6 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
-    set_user
     if @user.update(user_params)
       flash[:notice] = "You have successfuly updated your information"
       redirect_to @user # or user_path(@user)

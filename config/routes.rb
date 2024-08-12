@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :articles # , only: [ :show, :index, :new, :create, :edit, :update, :destroy]
-  root "users#new"
+  root "pages#home"
+  get "signup", to: "users#new"
   get "home", to: "pages#home"
   get "about", to: "pages#about"
   # get "signup", to: "users#new"

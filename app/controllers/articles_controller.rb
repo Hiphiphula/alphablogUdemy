@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article]
     @article = Article.new(article_params)
+    @article.user_id = current_user
     # render plain: @article.inspect
     # render :new unless @article.save
     if @article.save
