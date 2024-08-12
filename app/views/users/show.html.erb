@@ -1,12 +1,20 @@
+<h5 class="container">
+  <%= link_to "Back", users_path, class:"text-decoration-none" %>
+
+</h5>
+
 <div class="container d-flex justify-content-center">
     <h1 class="mt-4"> <%= @user.username %>'s profile </h1>
 </div>
 <div class="container d-flex justify-content-center">
   <%= gravatar_for @user, size:200, class: "rounded shadow mx-auto d-block" %>
 </div>
-<div class="text-center mt-4"> 
-  <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %>
-</div>
+
+<%if logged_in? && @user == current_user%>
+  <div class="text-center mt-4"> 
+    <%= link_to "Edit your profile", edit_user_path(@user), class: "btn btn-outline-info" %>
+  </div>
+<%end%>
 
 
 <div class="flickr_pagination mb-4">
