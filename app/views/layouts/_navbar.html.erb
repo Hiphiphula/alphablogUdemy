@@ -34,6 +34,9 @@
             <li><%= link_to "Edit User", edit_user_path(current_user), class:"dropdown-item text-decoration-none" %></li>
             <li><%= link_to "View Profile", user_path(current_user), class:"dropdown-item text-decoration-none" %></li>
             <li><hr class="dropdown-divider"></li>
+            <li><%= link_to "Delete Profile", user_path(current_user), class:"dropdown-item text-danger", data: {
+                            "turbo_method": :delete,
+                            "turbo_confirm": "Are you sure?"}%></li>
             
           </ul>
         </li>
