@@ -1,0 +1,24 @@
+<div class="container">
+    <h1 class="mt-4">createa a new category </h1>
+</div>
+<div class="container">
+    <%= render 'shared/errors', obj:@category%>
+
+    <div class="card">
+        <div class="card-body">
+            <%= form_with(model: @category, local: true) do |f|%>
+                
+                <div class="field form-group">
+                    <%= f.label :name , "Category Name", class: "col-2 col-form-label" %> </br>
+                    <%= f.text_field :name , class:"form-control", placeholder: "Enter a name" %>
+                </div>
+                </br>
+                <div>
+                    <%= f.submit class:"btn btn-secondary"%>
+                </div>
+            <%end%>
+        </div>
+    </div>
+</div>
+
+
