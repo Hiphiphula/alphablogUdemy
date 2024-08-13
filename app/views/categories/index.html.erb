@@ -1,0 +1,36 @@
+<div class="container">
+
+    <div class="flickr_pagination mb-4">
+            <div class="page_info">
+                <%= page_entries_info @categories %>
+            </div>
+                <%= will_paginate @categories, :container => false %>
+        </div>
+    <h1 class="text-center">Categories</h1>
+        
+        <table class="table table-striped table-hover mt-4">
+        <thead>
+            <tr>
+                <th class="text-center">Title</th>
+                <th class="text-center">Description</th>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+            <% @categories.each do |category |%>
+                <tr>
+                    <td> 
+                        <%= link_to category.name, category_path(category), class:"text-decoration-none text-success text-uppercase" %>
+                    </td>
+                    <td> Created <%= time_ago_in_words(category.created_at)%> ago, edited <%= time_ago_in_words(category.updated_at)%></td>
+                </tr>
+            <%end%>
+        </tbody>
+
+        
+    </table>
+    <%= will_paginate @categories, class:"flickr_pagination mb-4" %>
+
+</div>
+

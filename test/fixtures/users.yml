@@ -1,7 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  username: MyString
+  username: "user1"
+  email: "user1@gmail.com"
+  password_digest: "$2a$12$7hpUy9tbc/.qkVTxVni29OclkotHKf5qD7R62gYY77aIBqtERvtpG"
 
 two:
-  username: MyString
+  username: "user2"
+  email: "user2@gmail.com"
+  password_digest: "$2a$12$7hpUy9tbc/.qkVTxVni29OclkotHKf5qD7R62gYY77aIBqtERvtpG"
