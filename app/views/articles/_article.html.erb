@@ -18,6 +18,9 @@
                         <% if article.user %>
                             by <%= link_to article.user.username, user_path(article.user)%>
                         <%end%>
+                        <% if article.categories.any?%>
+                            <div class="mt-2"> <%= render article.categories %> </div>
+                        <%end%>
                     </td>
                     <td> <%= truncate(article.description, length: 100)%></td>
                     <td> <%= link_to "Show", article_path(article) %> </td>
