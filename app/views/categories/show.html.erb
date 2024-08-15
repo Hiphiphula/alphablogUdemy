@@ -1,3 +1,30 @@
 <div class="container d-flex justify-content-center">
     <h1 class="mt-4">Category:  <%= @category.name %></h1>
 </div>
+
+<%if logged_in? && current_user.admin?%>
+  <div class="text-center mt-4"> 
+    <%= link_to "Edit Category Name", edit_category_path(@category), class: "btn btn-outline-info" %>
+  </div>
+<%end%>
+
+
+
+
+<div class="container d-flex justify-content-center">
+  <h1 class="mt-4"> Articles </h1>  
+</div>
+
+<div class="flickr_pagination mb-4">
+        <div class="page_info">
+            <%= page_entries_info @articles %>
+        </div>
+            <%= will_paginate @articles, :container => false %>
+</div>
+
+<div class="container d-flex justify-content-center">
+  <%= render 'articles/article' %>
+</div>
+
+<%= will_paginate @articles, class:"flickr_pagination mb-4" %>
+
