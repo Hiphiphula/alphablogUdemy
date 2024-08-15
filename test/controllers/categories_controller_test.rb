@@ -17,7 +17,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create category" do
+  test "should create category if admin" do
     sign_in_as(@admin_user)
     assert_difference("Category.count", 1) do
       post categories_url, params: { category: { name: "Travel" } }
