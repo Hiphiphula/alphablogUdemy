@@ -2,7 +2,10 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  # Ensure no unnecessary JavaScript precompilation
+  config.assets.debug = true # Makes it easier to debug assets
+  config.assets.compile = true # Allows assets to be compiled on-the-fly
+  config.assets.precompile += %w( application.css )
   # In the development environment your application's code is reloaded any time
   # it changes. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

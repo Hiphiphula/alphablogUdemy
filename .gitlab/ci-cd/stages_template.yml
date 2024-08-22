@@ -1,0 +1,20 @@
+.build_template:
+  stage: build
+  script:
+    - echo $IGEEKS_DEPLOY_TOKEN | docker login $CI_REGISTRY -u $IGEEKS_DEPLOY_USER --password-stdin
+    - docker-compose -f docker-compose.yml -f .docker/$RAILS_ENV.yml build
+    - docker-compose -f docker-compose.yml -f .docker/$RAILS_ENV.yml push
+
+.staging_deployment_template:
+  stage: deploy
+  environment:
+    name: $RAILS_ENV
+  script:
+    - ssh -o StrictHostKeyChecking=no $STAGING_SERVER "REPOSITORY_URL=$REPOSITORY_URL CHECKOUT_BRANCH=$CI_COMMIT_REF_NAME RAILS_ENV=$RAILS_ENV SERVER_DIRECTORY=$SERVER_DIRECTORY CI_PROJECT_NAME=$CI_PROJECT_NAME CI_REGISTRY=$CI_REGISTRY CI_DEPLOY_USER=$CI_DEPLOY_USER CI_DEPLOY_PASSWORD=$CI_DEPLOY_PASSWORD /bin/bash -s " < .gitlab/ci-cd/deploy.sh
+
+.production_deployment_template:
+  stage: deploy
+  environment:
+    name: $RAILS_ENV
+  script:
+    - ssh -o StrictHostKeyChecking=no $PRODUCTION_SERVER "REPOSITORY_URL=$REPOSITORY_URL CHECKOUT_BRANCH=$CI_COMMIT_REF_NAME RAILS_ENV=$RAILS_ENV SERVER_DIRECTORY=$SERVER_DIRECTORY CI_PROJECT_NAME=$CI_PROJECT_NAME CI_REGISTRY=$CI_REGISTRY CI_DEPLOY_USER=$CI_DEPLOY_USER CI_DEPLOY_PASSWORD=$CI_DEPLOY_PASSWORD /bin/bash -s " < .gitlab/ci-cd/deploy.sh

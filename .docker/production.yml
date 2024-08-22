@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  web:
+    build:
+      context: .
+      args:
+        RAILS_ENV: production
+    image: "dockerhub.nutrifood.co.id/igeeks-developer/rd_storage/rd_storage_production:latest"
+    volumes:
+      - /home/baf/volume/rd_storage/data/log:/rd_storage/log
+      - /home/baf/volume/rd_storage/data/public/assets:/rd_storage/public/assets
+      - /home/baf/volume/rd_storage/data/public/uploads:/rd_storage/public/uploads

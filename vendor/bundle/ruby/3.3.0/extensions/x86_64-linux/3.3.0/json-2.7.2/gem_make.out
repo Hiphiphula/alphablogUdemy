@@ -1,0 +1,16 @@
+current directory: /home/farel/railsproject/alpha-blog/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+/usr/share/rvm/rubies/ruby-3.3.3/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/farel/railsproject/alpha-blog/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240816-25163-6fw04p sitelibdir\=./.gem.20240816-25163-6fw04p clean
+
+current directory: /home/farel/railsproject/alpha-blog/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240816-25163-6fw04p sitelibdir\=./.gem.20240816-25163-6fw04p
+make: Nothing to be done for 'all'.
+
+current directory: /home/farel/railsproject/alpha-blog/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240816-25163-6fw04p sitelibdir\=./.gem.20240816-25163-6fw04p install
+
+current directory: /home/farel/railsproject/alpha-blog/vendor/bundle/ruby/3.3.0/gems/json-2.7.2/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240816-25163-6fw04p sitelibdir\=./.gem.20240816-25163-6fw04p clean

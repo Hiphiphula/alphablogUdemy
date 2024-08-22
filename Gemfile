@@ -22,10 +22,31 @@ gem "jbuilder"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
+gem 'sassc-rails'
+# gem 'dartsass-rails'
+# gem 'cssbundling-rails'
+# gem 'webpacker'
+gem 'coffee-script'
+# gem 'jsbundling-rails'
+# gem "jquery-rails"
+# gem 'vite_rails'
+
+
+
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
 
 gem "will_paginate", "~> 4.0"
+
+
+
+# capistrano
+gem "capistrano", "~> 3.17"
+gem "capistrano-rails"
+gem "capistrano-bundler"
+gem "capistrano-rvm"
+
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -62,3 +83,5 @@ end
 group :production do
   gem "pg"
 end
+
+gem "bootstrap", "~> 5.3"
