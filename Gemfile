@@ -41,7 +41,7 @@ gem "will_paginate", "~> 4.0"
 
 
 # capistrano
-gem "capistrano", "~> 3.17"
+gem "capistrano", "~> 3.19"
 gem "capistrano-rails"
 gem "capistrano-bundler"
 gem "capistrano-rvm"
